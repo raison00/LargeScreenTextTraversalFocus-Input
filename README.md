@@ -5,6 +5,8 @@ This respository is for creating a Focus Input, TextField, and Traversal Demonst
 
 This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
+<img width="1035" height="325" alt="image" src="https://github.com/user-attachments/assets/5a743802-4927-4119-8b06-1057e2e5c686" />
+
 <video src="https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4?raw=true" width="100%" autoplay loop muted playsinline>
 </video>
 
@@ -69,6 +71,8 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
         )
     }
 }
+
+<img width="605" height="169" alt="kotlin code image" src="https://github.com/user-attachments/assets/8d346d7e-c0af-4497-a21e-72deb992a57d" />
 
 # Compostable
 @Composable
