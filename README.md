@@ -52,7 +52,7 @@ FocusableTextField: A custom (or wrapped) composable that handles the internal s
 This implementation uses a vertical Column which, by default, establishes a linear focus traversal path. 
 In a compliant system, the FocusManager should intercept the IME_ACTION_NEXT event from TextField $index and trigger a moveFocus request to TextField $index + 1.
 
-# Compliance GAR WCAG AA Considerations
+# Compliance WCAG AA Considerations
 Form Factor Consistency: Because this uses a Column, the focus order is Top-to-Bottom.
 
 Accessibility: Each field is dynamically labeled ("TextField 0", "TextField 1"), which provides the necessary context for Screen Readers (TalkBack) to identify the user's current position within the list.
