@@ -8,13 +8,13 @@ This solution shows working Focus Traversal within TextFields using the TAB key 
 <video src="https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4?raw=true" width="100%" autoplay loop muted playsinline>
 </video>
 
-[Focus Trapping Video](https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4)
+[Focus Trapping Video](https://youtu.be/KXpY0NdfFn4)
 
 <video src="https://youtu.be/KXpY0NdfFn4" width="100%" autoplay loop muted playsinline>
 </video>
 
 
-https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4
+[link to video file](https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4)
 # Overview
 This code snippet demonstrates the implementation of a scrollable vertical list of input fields in Jetpack Compose. It leverages LocalFocusManager to provide programmatic control over keyboard focus and uses a repeat loop to generate a series of FocusableTextField components with indexed labeling.
 
