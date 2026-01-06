@@ -45,7 +45,7 @@ FocusableTextField: A custom (or wrapped) composable that likely handles the int
 This implementation uses a vertical Column which, by default, establishes a linear focus traversal path. 
 In a compliant system, the FocusManager should intercept the IME_ACTION_NEXT event from TextField $index and trigger a moveFocus request to TextField $index + 1.
 
-# Compliance Note
+# Compliance GAR WCAG AA Considerations
 Form Factor Consistency: Because this uses a Column, the focus order is Top-to-Bottom.
 
 Accessibility: Each field is dynamically labeled ("TextField 0", "TextField 1"), which provides the necessary context for Screen Readers (TalkBack) to identify the user's current position within the list.
@@ -60,7 +60,8 @@ val focusManager = LocalFocusManager.current
 2. Vertical layout with standardized 16dp spacing for accessibility compliance
    
 Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-    // 3. Dynamically generate 4 focusable input fields
+
+3. Dynamically generate 4 focusable input fields
     repeat(times = 4) { index ->
         FocusableTextField(
             label = "TextField $index" // Indexed labeling for clear UX and A11y
