@@ -10,6 +10,8 @@ shows working Focus Traversal within TextFields using the TAB key for keyboard n
 # Overview
 This code snippet demonstrates the implementation of a scrollable vertical list of input fields in Jetpack Compose. It leverages LocalFocusManager to provide programmatic control over keyboard focus and uses a repeat loop to generate a series of FocusableTextField components with indexed labeling.
 
+This code implementation is an example of Accessible and State-Aware Input Design. By explicitly managing the focus state, there is a "Conditional UI" pattern—where the clear button only appears when relevant—which reduces visual clutter for the user.
+
 # Component Breakdown
 LocalFocusManager.current: Retrieves the FocusManager instance from the current Composition. This allows the parent or child components to programmatically move focus (e.g., moveFocus(FocusDirection.Down)) or clear focus when an action is completed.
 
@@ -45,3 +47,65 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
         )
     }
 }
+
+# COMPOSTABLE
+@Composable
+fun FocusableTextField(
+    label: String,
+    imeAction: ImeAction = ImeAction.Next,
+    onNext: () -> Unit = {}
+) {
+    // State for the text input
+    var text by remember { mutableStateOf("") }
+
+    // State to track if this specific field has focus
+    var isFocused by remember { mutableStateOf(false) }
+
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        modifier = Modifier
+            .fillMaxWidth()
+            // Updates isFocused whenever the focus state changes
+            .onFocusChanged { state ->
+                isFocused = state.isFocused
+            },
+        label = { Text(label) },
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Default.Search,
+                contentDescription = null
+            )
+        },
+        trailingIcon = {
+            // Show clear button only if there's text AND the field is active
+            if (text.isNotEmpty() && isFocused) {
+                IconButton(onClick = { text = "" }) {
+                    Icon(
+                        imageVector = Icons.Default.Close,
+                        contentDescription = "Clear text"
+                    )
+                }
+            }
+        },
+        // CORRECTED: KeyboardOptions only contains IME and Type info
+        keyboardOptions = KeyboardOptions(
+            imeAction = imeAction
+        ),
+        // Triggers the onNext callback for various keyboard "Enter" actions
+        keyboardActions = KeyboardActions(
+            onNext = { onNext() },
+            onDone = { onNext() },
+            onGo = { onNext() }
+        ),
+        // CORRECTED: singleLine and maxLines belong here, not in KeyboardOptions
+        singleLine = true,
+        maxLines = 1,
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedBorderColor = MaterialTheme.colorScheme.primary,
+            unfocusedBorderColor = MaterialTheme.colorScheme.outline
+        )
+    )
+}
+
+
