@@ -62,6 +62,7 @@ val focusManager = LocalFocusManager.current
 Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
 
 3. Dynamically generate 4 focusable input fields
+   
     repeat(times = 4) { index ->
         FocusableTextField(
             label = "TextField $index" // Indexed labeling for clear UX and A11y
