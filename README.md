@@ -1,4 +1,4 @@
-# LargeScreenTextTraversalFocus-Input
+# Large Screen Text Traversal Focus & Input TextField Trappings and Solutions 
 Working through Jetpack Compose Large Screen Focus and Input traps within TextFields
 
 This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.
