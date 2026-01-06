@@ -141,22 +141,4 @@ fun FocusableTextField(
 }
 
 
-## Specific Details:
-[versions]
-agp = "8.13.2" 
 
-kotlin = "2.0.21"
-
-coreKtx = "1.17.0"
-
-junit = "4.13.2"
-
-junitVersion = "1.3.0"
-
-espressoCore = "3.7.0"
-
-lifecycleRuntimeKtx = "2.10.0"
-
-activityCompose = "1.12.2"
-
-composeBom = "2025.12.01"
