@@ -7,6 +7,7 @@ targetSdk = 36
 Java + jvmTarget = 11  
 targetCompatibility = JavaVersion.VERSION_11
 
+A common issue for developers is getting stuck in a focus trap, especially within a TextField.
 This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
 <img width="1035" height="325" alt="image" src="https://github.com/user-attachments/assets/5a743802-4927-4119-8b06-1057e2e5c686" />
