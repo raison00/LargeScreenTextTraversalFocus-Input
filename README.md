@@ -28,10 +28,14 @@ Form Factor Consistency: Because this uses a Column, the focus order is Top-to-B
 Accessibility: Each field is dynamically labeled ("TextField 0", "TextField 1"), which provides the necessary context for Screen Readers (TalkBack) to identify the user's current position within the list.
 
 Commented code to make TextFields function with icons and CTAs within the field while allowing for input and focus traversal:
-// 1. Obtain the FocusManager to handle programmatic navigation (Tab/Next/Enter)
+
+
+1. Obtain the FocusManager to handle programmatic navigation (Tab/Next/Enter)
+
 val focusManager = LocalFocusManager.current
 
-// 2. Vertical layout with standardized 16dp spacing for accessibility compliance
+2. Vertical layout with standardized 16dp spacing for accessibility compliance
+   
 Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
     // 3. Dynamically generate 4 focusable input fields
     repeat(times = 4) { index ->
