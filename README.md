@@ -68,7 +68,7 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
     }
 }
 
-# COMPOSTABLE
+# Compostable
 @Composable
 fun FocusableTextField(
     label: String,
