@@ -135,7 +135,7 @@ fun FocusableTextField(
 }
 
 
-## Specic Details:
+## Specific Details:
 [versions]
 agp = "8.13.2" 
 
