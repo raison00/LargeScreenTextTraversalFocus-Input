@@ -3,14 +3,26 @@ Working through Jetpack Compose Large Screen Focus and Input traps within TextFi
 
 This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.
 
-shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  This solution requires a 
+This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
-<img width="605" height="169" alt="image" src="https://github.com/user-attachments/assets/8d346d7e-c0af-4497-a21e-72deb992a57d" />
+<video src="your-video-link-here.mp4" controls="controls" style="max-width: 600px;">
+</video>
 
 # Overview
 This code snippet demonstrates the implementation of a scrollable vertical list of input fields in Jetpack Compose. It leverages LocalFocusManager to provide programmatic control over keyboard focus and uses a repeat loop to generate a series of FocusableTextField components with indexed labeling.
 
 This code implementation is an example of Accessible and State-Aware Input Design. By explicitly managing the focus state, there is a "Conditional UI" pattern—where the clear button only appears when relevant—which reduces visual clutter for the user.
+
+<img width="605" height="169" alt="kotlin code image" src="https://github.com/user-attachments/assets/8d346d7e-c0af-4497-a21e-72deb992a57d" />
+
+
+# Composable updates isFocused whenever the focus state changes
+<img width="687" height="860" alt="kotlin code image" src="https://github.com/user-attachments/assets/d1aa3a44-6ee6-4ab6-b1ce-f3d94145fb9c" />
+
+
+#  Triggers the onNext callback for various keyboard "Enter" actions + ensures the TextField doesn't get trapped within creating multilines
+<img width="653" height="420" alt="KeyboardOption kotlin code image" src="https://github.com/user-attachments/assets/433694bd-b7fe-4e18-ad27-965e6aba80b9" />
+
 
 # Component Breakdown
 LocalFocusManager.current: Retrieves the FocusManager instance from the current Composition. This allows the parent or child components to programmatically move focus (e.g., moveFocus(FocusDirection.Down)) or clear focus when an action is completed.
@@ -20,6 +32,7 @@ Column: Acts as the layout container, organizing the children vertically. The sp
 repeat(times = 4): A standard Kotlin control flow used here to instantiate multiple fields. This approach is ideal for form prototyping or generating lists where the number of fields is predetermined.
 
 FocusableTextField: A custom (or wrapped) composable that likely handles the internal state and focus request logic for each individual input line.
+
 
 # Focus Traversal Description
 This implementation uses a vertical Column which, by default, establishes a linear focus traversal path. 
