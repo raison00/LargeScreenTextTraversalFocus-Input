@@ -80,6 +80,7 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
 <img width="605" height="169" alt="kotlin code image" src="https://github.com/user-attachments/assets/8d346d7e-c0af-4497-a21e-72deb992a57d" />
 
 # Compostable
+```kotlin
 @Composable
 fun FocusableTextField(
     label: String,
