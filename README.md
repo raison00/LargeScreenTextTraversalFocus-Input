@@ -114,7 +114,7 @@ fun FocusableTextField(
                 }
             }
         },
-        // CORRECTED: KeyboardOptions only contains IME and Type info
+        // KeyboardOptions only contains IME and Type info
         keyboardOptions = KeyboardOptions(
             imeAction = imeAction
         ),
@@ -124,7 +124,7 @@ fun FocusableTextField(
             onDone = { onNext() },
             onGo = { onNext() }
         ),
-        // CORRECTED: singleLine and maxLines belong here, not in KeyboardOptions
+        //  singleLine and maxLines stop the trapped textfield issue, will not work within KeyboardOptions
         singleLine = true,
         maxLines = 1,
         colors = OutlinedTextFieldDefaults.colors(
