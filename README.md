@@ -7,6 +7,8 @@ targetSdk = 36
 Java + jvmTarget = 11  
 targetCompatibility = JavaVersion.VERSION_11
 
+
+
 A common issue for developers is getting stuck in a focus trap, especially within a TextField.
 This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
@@ -78,6 +80,27 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
 }
 
 <img width="605" height="169" alt="kotlin code image" src="https://github.com/user-attachments/assets/8d346d7e-c0af-4497-a21e-72deb992a57d" />
+
+
+## Specific Details:
+[versions]
+agp = "8.13.2" 
+
+kotlin = "2.0.21"
+
+coreKtx = "1.17.0"
+
+junit = "4.13.2"
+
+junitVersion = "1.3.0"
+
+espressoCore = "3.7.0"
+
+lifecycleRuntimeKtx = "2.10.0"
+
+activityCompose = "1.12.2"
+
+composeBom = "2025.12.01"
 
 # Compostable
 ```kotlin
