@@ -2,17 +2,6 @@
 Working through Jetpack Compose Large Screen Focus and Input traps within TextFields
 
 This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.
-Specic Details:
-[versions]
-agp = "8.13.2"
-kotlin = "2.0.21"
-coreKtx = "1.17.0"
-junit = "4.13.2"
-junitVersion = "1.3.0"
-espressoCore = "3.7.0"
-lifecycleRuntimeKtx = "2.10.0"
-activityCompose = "1.12.2"
-composeBom = "2025.12.01"
 
 This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
@@ -146,3 +135,22 @@ fun FocusableTextField(
 }
 
 
+## Specic Details:
+[versions]
+agp = "8.13.2" 
+
+kotlin = "2.0.21"
+
+coreKtx = "1.17.0"
+
+junit = "4.13.2"
+
+junitVersion = "1.3.0"
+
+espressoCore = "3.7.0"
+
+lifecycleRuntimeKtx = "2.10.0"
+
+activityCompose = "1.12.2"
+
+composeBom = "2025.12.01"
