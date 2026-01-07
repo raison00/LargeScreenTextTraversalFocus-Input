@@ -1,5 +1,18 @@
 # Large Screen Text Traversal Focus & Input TextField Trappings and Solutions 
-Working through Jetpack Compose Large Screen Focus and Input traps within TextFields
+Working through Jetpack Compose Large Screen Focus and Input traps within TextFields using popular methods.  Using the original TextField (part of the Compose Material/Material3 libraries) to the newer TextFieldState ecosystem (introduced with BasicTextField2, now just called BasicTextField in newer versions), the API shift is significant.
+
+The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
+The New Way: You pass a state object. The text field updates the state internally, and you observe it when you need it.
+
+In the old API, if you wanted to force uppercase or limit length, you had to write logic inside onValueChange. In the new API, this is handled by InputTransformation.  The new API uses a synchronous edit buffer within TextFieldState. This ensures that the cursor position and the text content are always in sync, even if the UI takes a moment to catch up.
+
+## Version and Milestone
+Compose 1.6,BasicTextField2 introduced as an experiment.
+Compose 1.7,API renamed to BasicTextField; TextFieldState becomes the new standard.
+Compose 1.8,Stabilization of Transformations and introduction of SecureTextField.
+Compose 1.10 (Current),"onValueChange is officially considered ""legacy"" for new feature development."
+
+In Material 3 version 1.4.0 (December 2025), the high-level components (TextField and OutlinedTextField) finally received official overloads for TextFieldState. This allows developers to get the Material design visuals while using the high-performance state-based engine under the hood.
 
 This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.   
 minSdk = 24
@@ -23,6 +36,8 @@ When you build a text input today, ask yourself:
 [ ] Is there logic in onValueChange? (Move it to InputTransformation).
 
 [ ] Is it saving to a DB? (Use snapshotFlow + debounce).
+
+
 
 <img width="1035" height="325" alt="image" src="https://github.com/user-attachments/assets/5a743802-4927-4119-8b06-1057e2e5c686" />
 
@@ -115,6 +130,7 @@ activityCompose = "1.12.2"
 
 composeBom = "2025.12.01"
 
+## The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
 # Compostable
 ```kotlin
 @Composable
