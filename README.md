@@ -12,6 +12,18 @@ targetCompatibility = JavaVersion.VERSION_11
 A common issue for developers is getting stuck in a focus trap, especially within a TextField.
 This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
+There are changes to the Compose API for the TextFields that should be considered.
+The 2026 Checklist
+When you build a text input today, ask yourself:
+
+[ ] Is the state hoisted? (Use TextFieldState in the ViewModel).
+
+[ ] Are visuals custom? (Use BasicTextField with a decorator).
+
+[ ] Is there logic in onValueChange? (Move it to InputTransformation).
+
+[ ] Is it saving to a DB? (Use snapshotFlow + debounce).
+
 <img width="1035" height="325" alt="image" src="https://github.com/user-attachments/assets/5a743802-4927-4119-8b06-1057e2e5c686" />
 
 <video src="https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4?raw=true" width="100%" autoplay loop muted playsinline>
@@ -24,7 +36,8 @@ This solution shows working Focus Traversal within TextFields using the TAB key 
 
 
 [link to video file](https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4)
-# Overview
+
+# Overview of a mixed implementation of API versions that works, but is not the correct practice in 2026:
 This code snippet demonstrates the implementation of a scrollable vertical list of input fields in Jetpack Compose. It leverages LocalFocusManager to provide programmatic control over keyboard focus and uses a repeat loop to generate a series of FocusableTextField components with indexed labeling.
 
 This code implementation is an example of Accessible and State-Aware Input Design. By explicitly managing the focus state, there is a "Conditional UI" pattern—where the clear button only appears when relevant—which reduces visual clutter for the user.
