@@ -14,11 +14,11 @@ In the old API, if you wanted to force uppercase or limit length, you had to wri
 
 In Material 3 version 1.4.0 (December 2025), the high-level components (TextField and OutlinedTextField) finally received official overloads for TextFieldState. This allows developers to get the Material design visuals while using the high-performance state-based engine under the hood.
 
-This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.   
-- minSdk = 24
-- targetSdk = 36
-- Java + jvmTarget = 11  
-- targetCompatibility = JavaVersion.VERSION_11
+> This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.   
+> - minSdk = 24
+> - targetSdk = 36
+> - Java + jvmTarget = 11  
+> - targetCompatibility = JavaVersion.VERSION_11
 
 
 
