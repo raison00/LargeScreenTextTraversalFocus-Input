@@ -6,19 +6,19 @@ The New Way: You pass a state object. The text field updates the state internall
 
 In the old API, if you wanted to force uppercase or limit length, you had to write logic inside onValueChange. In the new API (currently 1.10), this is handled by InputTransformation.  The new API uses a synchronous edit buffer within TextFieldState. This ensures that the cursor position and the text content are always in sync, even if the UI takes a moment to catch up.
 
-## Version and Milestone
-Compose 1.6,BasicTextField2 introduced as an experiment.
-Compose 1.7,API renamed to BasicTextField; TextFieldState becomes the new standard.
-Compose 1.8,Stabilization of Transformations and introduction of SecureTextField.
-Compose 1.10 (Current),"onValueChange is officially considered ""legacy"" for new feature development."
+## Version and Milestones of TextField from 2024 to 2025
+- Compose 1.6,BasicTextField2 introduced as an experiment.
+- Compose 1.7,API renamed to BasicTextField; TextFieldState becomes the new standard.
+- Compose 1.8,Stabilization of Transformations and introduction of SecureTextField.
+- Compose 1.10 (Current),"onValueChange is officially considered ""legacy"" for new feature development."
 
 In Material 3 version 1.4.0 (December 2025), the high-level components (TextField and OutlinedTextField) finally received official overloads for TextFieldState. This allows developers to get the Material design visuals while using the high-performance state-based engine under the hood.
 
 This respository is for creating a Focus Input, TextField, and Traversal Demonstration on Android 16, Jetpack Compose 2025.12.01, Material 3 1.4.0.   
-minSdk = 24
-targetSdk = 36
-Java + jvmTarget = 11  
-targetCompatibility = JavaVersion.VERSION_11
+- minSdk = 24
+- targetSdk = 36
+- Java + jvmTarget = 11  
+- targetCompatibility = JavaVersion.VERSION_11
 
 
 
@@ -26,16 +26,17 @@ A common issue for developers is getting stuck in a focus trap, especially withi
 This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
 
 There are changes to the Compose API for the TextFields that should be considered.
-The 2026 Checklist
-When you build a text input today, ask yourself:
 
-[ ] Is the state hoisted? (Use TextFieldState in the ViewModel).
-
-[ ] Are visuals custom? (Use BasicTextField with a decorator).
-
-[ ] Is there logic in onValueChange? (Move it to InputTransformation).
-
-[ ] Is it saving to a DB? (Use snapshotFlow + debounce).
+> #### The 2026 Checklist
+> When you build a text input today, ask yourself:
+>
+> [ ] Is the state hoisted? (Use TextFieldState in the ViewModel).
+>
+> [ ] Are visuals custom? (Use BasicTextField with a decorator).
+>
+> [ ] Is there logic in onValueChange? (Move it to InputTransformation).
+>
+> [ ] Is it saving to a DB? (Use snapshotFlow + debounce).
 
 
 
@@ -68,7 +69,7 @@ This code implementation is an example of Accessible and State-Aware Input Desig
 <img width="653" height="420" alt="KeyboardOption kotlin code image" src="https://github.com/user-attachments/assets/433694bd-b7fe-4e18-ad27-965e6aba80b9" />
 
 
-# Component Breakdown
+# Component Breakdown 
 LocalFocusManager.current: Retrieves the FocusManager instance from the current Composition. This allows the parent or child components to programmatically move focus (e.g., moveFocus(FocusDirection.Down)) or clear focus when an action is completed.
 
 Column: Acts as the layout container, organizing the children vertically. The spacedBy(16.dp) parameter ensures a consistent visual rhythm and "touch target" clearance between fields.
@@ -110,28 +111,28 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
 <img width="605" height="169" alt="kotlin code image" src="https://github.com/user-attachments/assets/8d346d7e-c0af-4497-a21e-72deb992a57d" />
 
 
-## Specific Details:
-[versions]
-agp = "8.13.2" 
+> ## Specific Details:
+> [versions]
+> agp = "8.13.2" 
 
-kotlin = "2.0.21"
+> kotlin = "2.0.21"
 
-coreKtx = "1.17.0"
+> coreKtx = "1.17.0"
 
-junit = "4.13.2"
+> junit = "4.13.2"
 
-junitVersion = "1.3.0"
+> junitVersion = "1.3.0"
 
-espressoCore = "3.7.0"
+> espressoCore = "3.7.0"
 
-lifecycleRuntimeKtx = "2.10.0"
+> lifecycleRuntimeKtx = "2.10.0"
 
-activityCompose = "1.12.2"
+>  activityCompose = "1.12.2"
 
-composeBom = "2025.12.01"
+> composeBom = "2025.12.01"
 
-## The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
-# Compostable
+### The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
+
 ```kotlin
 @Composable
 fun FocusableTextField(
