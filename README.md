@@ -23,7 +23,7 @@ This respository is for creating a Focus Input, TextField, and Traversal Demonst
 
 
 A common issue for developers is getting stuck in a focus trap, especially within a TextField.
-This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  
+This solution shows working Focus Traversal within TextFields using the TAB key for keyboard navigation within and between TextFields.  This solution should be updated to support the newer API enhancements from Dec 2025.  Stay tuned for a new branch and documentation.
 
 There are changes to the Compose API for the TextFields that should be considered.
 
