@@ -131,7 +131,7 @@ Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
 
 > composeBom = "2025.12.01"
 
-### The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
+### The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.  This sample code will be updated in 2026 to support the current API with full support with SDK 23.
 
 ```kotlin
 @Composable
