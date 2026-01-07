@@ -4,7 +4,7 @@ Working through Jetpack Compose Large Screen Focus and Input traps within TextFi
 The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
 The New Way: You pass a state object. The text field updates the state internally, and you observe it when you need it.
 
-In the old API, if you wanted to force uppercase or limit length, you had to write logic inside onValueChange. In the new API, this is handled by InputTransformation.  The new API uses a synchronous edit buffer within TextFieldState. This ensures that the cursor position and the text content are always in sync, even if the UI takes a moment to catch up.
+In the old API, if you wanted to force uppercase or limit length, you had to write logic inside onValueChange. In the new API (currently 1.10), this is handled by InputTransformation.  The new API uses a synchronous edit buffer within TextFieldState. This ensures that the cursor position and the text content are always in sync, even if the UI takes a moment to catch up.
 
 ## Version and Milestone
 Compose 1.6,BasicTextField2 introduced as an experiment.
