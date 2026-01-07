@@ -53,7 +53,7 @@ There are changes to the Compose API for the TextFields that should be considere
 
 [link to video file](https://github.com/raison00/LargeScreenTextTraversalFocus-Input/blob/main/DesktopChromebookFocusTrappings.mp4)
 
-# Overview of a mixed implementation of API versions that works, but is not the correct practice in 2026:
+# Overview of a mixed implementation of API versions that works, but is no longer the best practice in 2026:
 This code snippet demonstrates the implementation of a scrollable vertical list of input fields in Jetpack Compose. It leverages LocalFocusManager to provide programmatic control over keyboard focus and uses a repeat loop to generate a series of FocusableTextField components with indexed labeling.
 
 This code implementation is an example of Accessible and State-Aware Input Design. By explicitly managing the focus state, there is a "Conditional UI" pattern—where the clear button only appears when relevant—which reduces visual clutter for the user.
