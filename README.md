@@ -1,4 +1,4 @@
-# Large Screen Text Traversal Focus & Input TextField Trappings and Solutions 
+# Text Traversal Focus & Input TextField Trappings and Solutions 
 Working through Jetpack Compose Large Screen Focus and Input traps within TextFields using popular methods.  Using the original TextField (part of the Compose Material/Material3 libraries) to the newer TextFieldState ecosystem (introduced with BasicTextField2, now just called BasicTextField in newer versions), the API shift is significant.
 
 The Old Way: You had to manually "hoist" the string and update it. If you did any heavy processing in onValueChange, you could cause typing lag.
